@@ -2,16 +2,20 @@ import React, { Component } from 'react';
 import Cell from './Cell';
 
 class Board extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            board: [
-                [1,2,3],
-                [4,5,6],
-                [7,8,9],
-            ]
-        }
+            board: []
+        };
 
+        const size = props.size;
+        for (let i=0; i<size; i++) {
+            let row = [];
+            for (let j=1; j<=size; j++) {
+                row.push(i*size + j);
+            }
+            this.state.board.push(row);
+        }
     }
 
     render() {

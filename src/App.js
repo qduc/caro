@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Board size="3"/>
+        <Board size="8"/>
       </div>
     );
   }
