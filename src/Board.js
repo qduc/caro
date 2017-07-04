@@ -18,14 +18,18 @@ class Board extends Component {
         }
     }
 
+    clickHandler(e) {
+        console.log('They clicked!');
+    }
+
     render() {
-        let rows = this.state.board.map((row) => {
-            let cells = row.map((cell) =>
-                <Cell value={cell} />
+        let rows = this.state.board.map((row, i) => {
+            let cells = row.map((cell, j) =>
+                <Cell key={i + ',' + j} value={cell} handleClick={this.clickHandler} />
             );
 
             return (
-                <tr>
+                <tr key={"row-" + i}>
                     {cells}
                 </tr>
             )
