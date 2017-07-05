@@ -7,7 +7,7 @@ class Cell extends Component {
     }
 
     handleClick(e) {
-        this.props.handleClick(e);
+        this.props.handleClick(this.props.row, this.props.col);
     }
 
     render() {
